@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alura.hotelalura.Controller">
+   <center>
+      <Pane prefHeight="512.0" prefWidth="468.0" style="-fx-background-color: fff;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="15.0" layoutY="13.0" prefHeight="470.0" prefWidth="454.0" style="-fx-background-color: #F7F7F8;" />
+            <ImageView fitHeight="450.0" fitWidth="358.0" layoutX="68.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imageSrc/ImgLogin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="495.0" prefWidth="287.0" style="-fx-background-color: fff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="25.0" layoutY="76.0" styleClass="title" stylesheets="@styleSheets/style.css" text="WELCOME TO BACK!" textFill="#157bfe" />
+            <Label layoutX="49.0" layoutY="104.0" text="Your Ultimate Hotel Management Companion" textFill="#888888">
+               <font>
+                  <Font size="9.0" />
+               </font></Label>
+            <TextField fx:id="username" layoutX="31.0" layoutY="147.0" prefHeight="35.0" prefWidth="222.0" promptText="you@example.com" style="-fx-background-color: F7F7F8;">
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+            </TextField>
+            <Button fx:id="login" layoutX="31.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#onloginClick" prefHeight="43.0" prefWidth="222.0" style="-fx-background-color: #157BFE;" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label layoutX="49.0" layoutY="370.0" text="Don´t you have an account?" />
+            <PasswordField fx:id="password" layoutX="31.0" layoutY="193.0" prefHeight="35.0" prefWidth="222.0" promptText="******" style="-fx-background-color: #F7F7F8;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </PasswordField>
+            <Pane layoutX="35.0" layoutY="152.0" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #fff;">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="187.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imageSrc/Frame%20(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="36.0" layoutY="198.0" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: #fff;">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imageSrc/Frame%20(2).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Hyperlink fx:id="forgotpsw" layoutX="147.0" layoutY="239.0" text="Forgot password?">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink fx:id="signup" layoutX="195.0" layoutY="367.0" text="Sign up">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
