@@ -1,0 +1,10 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+.title {
+    -fx-font-family: 'Krona One', sans-serif;
+    -fx-fill:  #157BFE;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+}
