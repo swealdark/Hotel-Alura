@@ -47,7 +47,7 @@
                               <Font name="SansSerif Regular" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="1.0" layoutY="135.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="184.0" stylesheets="@styleSheets/dashboard.css" text="Customer Registration" textFill="#838a94">
+                        <Button layoutX="1.0" layoutY="135.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="184.0" styleClass="unselected" stylesheets="@styleSheets/dashboard.css" text="Customer Registration" textFill="#838a94">
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" translateY="-5.0">
                                  <image>
@@ -59,7 +59,7 @@
                               <Font name="SansSerif Regular" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutY="228.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" stylesheets="@styleSheets/dashboard.css" text="Manage" textFill="#838a94">
+                        <Button layoutY="228.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" styleClass="unselected" stylesheets="@styleSheets/dashboard.css" text="Manage" textFill="#838a94">
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -70,7 +70,7 @@
                               <Font name="SansSerif Regular" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="1.0" layoutY="336.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" stylesheets="@styleSheets/dashboard.css" text="Employeds" textFill="#838a94">
+                        <Button layoutX="1.0" layoutY="336.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="unselected" stylesheets="@styleSheets/dashboard.css" text="Employeds" textFill="#838a94">
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -104,33 +104,60 @@
                <right>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <DatePicker layoutX="13.0" layoutY="189.0" prefHeight="25.0" prefWidth="111.0" stylesheets="@styleSheets/dashboard.css" />
-                        <DatePicker layoutX="13.0" layoutY="223.0" prefHeight="25.0" prefWidth="110.0" />
+                        <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="116.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true" x="30.0">
+                           <image>
+                              <Image url="@imageSrc/date.png" />
+                           </image>
+                        </ImageView>
+                        <DatePicker layoutX="22.0" layoutY="182.0" prefHeight="27.0" prefWidth="150.0" promptText="Entry date" styleClass="date" stylesheets="@styleSheets/dashboard.css" />
+                        <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="116.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" x="30.0">
+                           <image>
+                              <Image url="@imageSrc/date.png" />
+                           </image>
+                        </ImageView>
+                        <DatePicker layoutX="22.0" layoutY="217.0" prefHeight="28.0" prefWidth="149.0" promptText="Departure date" styleClass="date" stylesheets="@styleSheets/dashboard.css" />
                         <Label layoutX="9.0" layoutY="248.0" />
-                        <TextField layoutX="14.0" layoutY="265.0" promptText="Nombres y Apellidos" />
-                        <MenuButton layoutX="7.0" layoutY="299.0" mnemonicParsing="false" text="Metodo de Pago">
+                        <TextField layoutX="22.0" layoutY="265.0" prefHeight="24.0" prefWidth="152.0" promptText="Names" styleClass="date" stylesheets="@styleSheets/dashboard.css">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font></TextField>
+                        <MenuButton layoutX="22.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-color: #fff;" styleClass="date" stylesheets="@styleSheets/dashboard.css" text="Payment Method">
                           <items>
                             <MenuItem mnemonicParsing="false" text="Action 1" />
                             <MenuItem mnemonicParsing="false" text="Action 2" />
                           </items>
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font>
                         </MenuButton>
-                        <Label layoutX="9.0" layoutY="334.0" text="Monto: $100" />
-                        <Button layoutX="39.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" style="-fx-background-color: #157BFE;" text="Add" textFill="WHITE" />
+                        <Label layoutX="62.0" layoutY="336.0" text="Monto: $100">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font></Label>
                         <ImageView fitHeight="136.0" fitWidth="176.0" layoutX="13.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@imageSrc/estandar.jpg" />
                            </image></ImageView>
+                        <Button layoutX="39.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" styleClass="addButton" stylesheets="@styleSheets/dashboard.css" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Bold" size="12.0" />
+                           </font></Button>
+                        <Label layoutX="62.0" layoutY="142.0" text="Standar Room">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </right>
                <center>
-                  <AnchorPane prefHeight="355.0" prefWidth="353.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="355.0" prefWidth="353.0" styleClass="date" stylesheets="@styleSheets/dashboard.css" BorderPane.alignment="CENTER">
                      <children>
-                        <ImageView fitHeight="156.0" fitWidth="220.0" layoutX="74.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="156.0" fitWidth="220.0" layoutX="68.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@imageSrc/estandar.jpg" />
                            </image></ImageView>
-                        <Button layoutX="39.0" layoutY="113.0" mnemonicParsing="false" stylesheets="@styleSheets/dashboard.css">
+                        <Button layoutX="37.0" layoutY="113.0" mnemonicParsing="false" stylesheets="@styleSheets/dashboard.css">
                            <graphic>
                               <ImageView fitHeight="18.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -144,7 +171,7 @@
                            <image>
                               <Image url="@imageSrc/freeRoom.png" />
                            </image></ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="163.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="154.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@imageSrc/occupied.png" />
                            </image></ImageView>
@@ -152,13 +179,31 @@
                            <image>
                               <Image url="@imageSrc/maintenance.png" />
                            </image></ImageView>
-                        <Label layoutX="13.0" layoutY="352.0" text="Free Rooms" />
-                        <Label layoutX="145.0" layoutY="348.0" text="Ocupied Rooms" />
-                        <Label layoutX="272.0" layoutY="348.0" text="Maintenance" />
-                        <Label layoutX="37.0" layoutY="373.0" text="12" />
-                        <Label layoutX="183.0" layoutY="373.0" text="1" />
-                        <Label layoutX="301.0" layoutY="372.0" text="3" />
-                        <Button layoutX="303.0" layoutY="113.0" mnemonicParsing="false" stylesheets="@styleSheets/dashboard.css">
+                        <Label layoutX="13.0" layoutY="352.0" text="Free Rooms">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="134.0" layoutY="352.0" text="Ocupied Rooms">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="272.0" layoutY="352.0" text="Maintenance">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="37.0" layoutY="373.0" text="12">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="173.0" layoutY="373.0" text="1">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="301.0" layoutY="372.0" text="3">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font></Label>
+                        <Button layoutX="294.0" layoutY="113.0" mnemonicParsing="false" stylesheets="@styleSheets/dashboard.css">
                            <graphic>
                               <ImageView fitHeight="18.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -169,6 +214,11 @@
                         </Button>
                         <Line endX="195.0" layoutX="129.0" layoutY="280.0" startX="-100.0" stroke="#f4f5f7" strokeWidth="2.0" />
                         <Line endX="-98.0" endY="345.0" layoutX="452.0" layoutY="56.0" startX="-99.0" startY="-56.0" stroke="#f4f5f7" strokeWidth="2.0" />
+                        <Label layoutX="144.0" layoutY="210.0" text="STANDAR">
+                           <font>
+                              <Font name="SansSerif Bold" size="14.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </center>
