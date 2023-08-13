@@ -1,0 +1,22 @@
+
+
+.button{
+    -fx-background-color: transparent;
+}
+
+.navContent {
+    -fx-border-color: #F4F5F7;
+    -fx-border-width: 0 2 0 0;
+}
+.contentStyle2{
+    -fx-border-color: #F4F5F7;
+    -fx-border-width: 0 0 2 0;
+}
+
+.img-style {
+    -fx-border-radius: 20px;
+}
+.selected {
+    -fx-border-color: #157BFE;
+    -fx-border-width: 0 0 0 3;
+}
