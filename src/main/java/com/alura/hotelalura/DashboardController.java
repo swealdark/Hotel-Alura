@@ -6,7 +6,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+import javax.xml.datatype.Duration;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public class DashboardController {
@@ -44,6 +46,27 @@ public class DashboardController {
 
     }
 
+    public void evalDate(){
+        if((dateExit != null) & (dateEntry != null)) {
+            LocalDate dateStart = dateEntry.getValue();
+            LocalDate dateFinish = dateExit.getValue();
+            long differenceDays = ChronoUnit.DAYS.between(dateStart,dateFinish);
+            System.out.println("Gaaaaaaaaaaaaa" + differenceDays);
+            evalMount(differenceDays);
+        }
+    }
 
+    private void evalMount(long differenceDays) {
+        if (differenceDays > 0){
+            amount.setText("Mount:$"+(differenceDays*100));
+        }else if(differenceDays == 0){
+            amount.setText("Mount:$"+(100));
+        }else{
+            amount.setText("Invalid Date");
+        }
+    }
 
+    private void clickEventHandler(){
+
+    }
 }
