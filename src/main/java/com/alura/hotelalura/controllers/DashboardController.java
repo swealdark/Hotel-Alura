@@ -1,15 +1,11 @@
-package com.alura.hotelalura;
+package com.alura.hotelalura.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
-import javax.xml.datatype.Duration;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 
 public class DashboardController {
     @FXML
@@ -23,6 +19,8 @@ public class DashboardController {
     public ImageView image,image2;
     @FXML
     public ComboBox paymentMethod;
+    private boolean validation = false;
+    private double amountValue;
     @FXML
     public void initialize(){
         // In the future optimize this code
@@ -47,9 +45,11 @@ public class DashboardController {
     }
 
     public void evalDate(){
-        if((dateExit != null) & (dateEntry != null)) {
+        if((dateExit.getValue() != null) && (dateEntry.getValue() != null)) {
             LocalDate dateStart = dateEntry.getValue();
             LocalDate dateFinish = dateExit.getValue();
+            System.out.println(dateExit.getClass());
+            System.out.println(dateEntry.getClass());
             long differenceDays = ChronoUnit.DAYS.between(dateStart,dateFinish);
             System.out.println("Gaaaaaaaaaaaaa" + differenceDays);
             evalMount(differenceDays);
@@ -58,15 +58,27 @@ public class DashboardController {
 
     private void evalMount(long differenceDays) {
         if (differenceDays > 0){
-            amount.setText("Mount:$"+(differenceDays*100));
+            amountValue = differenceDays*100;
+            amount.setText("Mount:$"+(amountValue));
         }else if(differenceDays == 0){
-            amount.setText("Mount:$"+(100));
+            amountValue = 100;
+            amount.setText("Mount:$"+(amountValue));
         }else{
             amount.setText("Invalid Date");
         }
     }
-
+    @FXML
     private void clickEventHandler(){
+        if((amount.getText() != "Invalid Date") && (paymentMethod.getValue() != null) &&
+                (dateEntry.getValue() != null) && (dateExit.getValue() != null)){
+            ConnectController controller = new ConnectController();
+            controller.updateReg(dateEntry.getValue().toString(),
+                    dateExit.getValue().toString(), Double.toString(amountValue),(String) paymentMethod.getSelectionModel().getSelectedItem());
+            updateRegDisplay();
+        }
 
+    }
+    private void updateRegDisplay(){
+        
     }
 }
