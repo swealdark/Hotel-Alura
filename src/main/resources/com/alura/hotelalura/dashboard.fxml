@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alura.hotelalura.DashboardController">
+<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alura.hotelalura.controllers.DashboardController">
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
          <top>
@@ -136,7 +136,7 @@
                                     <Image url="@imageSrc/estandar.jpg" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="nextReg" layoutX="39.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" styleClass="addButton" stylesheets="@styleSheets/dashboard.css" text="Next" textFill="WHITE">
+                              <Button fx:id="nextReg" layoutX="39.0" layoutY="361.0" mnemonicParsing="false" onAction="#clickEventHandler" prefHeight="25.0" prefWidth="117.0" styleClass="addButton" stylesheets="@styleSheets/dashboard.css" text="Next" textFill="WHITE">
                                  <font>
                                     <Font name="SansSerif Bold" size="12.0" />
                                  </font>
