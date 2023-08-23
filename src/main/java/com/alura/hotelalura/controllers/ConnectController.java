@@ -20,4 +20,8 @@ public class ConnectController {
 
     }
 
+    public String getId() {
+        RegisterDao reg = new RegisterDao(new  ConnectionFactory().getConnection());
+        return reg.getId();
+    }
 }

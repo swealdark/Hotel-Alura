@@ -109,7 +109,7 @@
                      <right>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane layoutX="23.0" layoutY="180.0" prefHeight="172.0" prefWidth="156.0">
+                              <Pane fx:id="regPhase2" layoutX="23.0" layoutY="180.0" prefHeight="194.0" prefWidth="156.0">
                                  <children>
                                     <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="95.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" x="30.0">
                                        <image>
@@ -129,6 +129,11 @@
                                        </font>
                                     </Label>
                                     <ComboBox fx:id="paymentMethod" layoutY="78.0" prefHeight="26.0" prefWidth="149.0" promptText="Payment Method" style="-fx-background-color: #fff;" styleClass="date" stylesheets="@styleSheets/dashboard.css" />
+                                    <Button fx:id="nextReg" layoutX="18.0" layoutY="158.0" mnemonicParsing="false" onAction="#clickEventHandler" prefHeight="25.0" prefWidth="117.0" styleClass="addButton" stylesheets="@styleSheets/dashboard.css" text="Next" textFill="WHITE">
+                                       <font>
+                                          <Font name="SansSerif Bold" size="12.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </Pane>
                               <ImageView fx:id="image2" fitHeight="136.0" fitWidth="176.0" layoutX="13.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
@@ -136,11 +141,6 @@
                                     <Image url="@imageSrc/estandar.jpg" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="nextReg" layoutX="39.0" layoutY="361.0" mnemonicParsing="false" onAction="#clickEventHandler" prefHeight="25.0" prefWidth="117.0" styleClass="addButton" stylesheets="@styleSheets/dashboard.css" text="Next" textFill="WHITE">
-                                 <font>
-                                    <Font name="SansSerif Bold" size="12.0" />
-                                 </font>
-                              </Button>
                               <Label layoutX="62.0" layoutY="143.0" text="Standar Room">
                                  <font>
                                     <Font name="SansSerif Regular" size="12.0" />

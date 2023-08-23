@@ -3,6 +3,7 @@ package com.alura.hotelalura.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RegisterDao {
@@ -23,6 +24,21 @@ public class RegisterDao {
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+    public String getId(){
+        try(conn){
+            PreparedStatement statement = conn.prepareStatement("SELECT ID FROM REGISTER ORDER BY ID DESC LIMIT 1");
+            ResultSet resultSet = statement.executeQuery();
+            if(resultSet.next()){
+                String numberReservation = resultSet.getString("ID");
+                return numberReservation;
+            }else{
+                throw new SQLException();
+            }
+
+        }catch (SQLException e){
+            throw new RuntimeException();
         }
     }
 }
