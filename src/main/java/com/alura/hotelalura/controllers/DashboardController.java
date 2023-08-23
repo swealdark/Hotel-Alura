@@ -1,16 +1,20 @@
 package com.alura.hotelalura.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class DashboardController {
     @FXML
     public Button nextReg,next,previous;
-
     @FXML
     public DatePicker dateExit,dateEntry;
     @FXML
@@ -19,6 +23,8 @@ public class DashboardController {
     public ImageView image,image2;
     @FXML
     public ComboBox paymentMethod;
+    @FXML
+    public Pane regPhase2;
     private boolean validation = false;
     private double amountValue;
     @FXML
@@ -79,6 +85,21 @@ public class DashboardController {
 
     }
     private void updateRegDisplay(){
-        
+        try {
+            regPhase2.getChildren().clear();
+            Parent view = FXMLLoader.load(getClass().getResource("regt2.fxml"));
+            regPhase2.getChildren().add(view);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    private void save(){
+
+    }
+    private void cancel(){
+        ConnectController controller = new ConnectController();
+
     }
 }
