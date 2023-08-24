@@ -1,6 +1,12 @@
 package com.alura.hotelalura.dao;
 
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -39,6 +45,16 @@ public class RegisterDao {
 
         }catch (SQLException e){
             throw new RuntimeException();
+        }
+    }
+
+    public void clearReg() {
+        try(conn) {
+            PreparedStatement statement = conn.prepareStatement("DELETE FROM REGISTER ORDER BY ID DESC LIMIT 1");
+            statement.execute();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }

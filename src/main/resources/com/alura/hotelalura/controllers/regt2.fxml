@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="238.0" prefWidth="156.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alura.hotelalura.controllers.RegController">
+<Pane fx:id="regPhase2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="238.0" prefWidth="156.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alura.hotelalura.controllers.RegController">
    <children>
       <Label fx:id="resLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="-3.0" prefHeight="17.0" prefWidth="156.0" text="Reserva : 001" />
       <TextField layoutX="3.0" layoutY="22.0" promptText="FirstName" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
@@ -22,7 +22,7 @@
       </ImageView>
       <DatePicker layoutX="4.0" layoutY="80.0" prefHeight="25.0" prefWidth="149.0" promptText="Date of Birth" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
       <ComboBox layoutX="4.0" layoutY="109.0" prefWidth="150.0" promptText="Nationality" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
-      <Button layoutX="17.0" layoutY="176.0" mnemonicParsing="false" stylesheets="@../styleSheets/dashboard.css">
+      <Button layoutX="17.0" layoutY="176.0" mnemonicParsing="false" onAction="#cancel" stylesheets="@../styleSheets/dashboard.css">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
