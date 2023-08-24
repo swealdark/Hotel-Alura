@@ -99,7 +99,6 @@ public class DashboardController {
 
     }
     private void cancel(){
-        ConnectController controller = new ConnectController();
 
     }
 }

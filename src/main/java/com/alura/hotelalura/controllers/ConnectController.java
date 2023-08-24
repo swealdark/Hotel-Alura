@@ -3,6 +3,14 @@ package com.alura.hotelalura.controllers;
 import com.alura.hotelalura.dao.RegisterDao;
 import com.alura.hotelalura.dao.LoginDao;
 import com.alura.hotelalura.factory.ConnectionFactory;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ConnectController {
 
@@ -23,5 +31,12 @@ public class ConnectController {
     public String getId() {
         RegisterDao reg = new RegisterDao(new  ConnectionFactory().getConnection());
         return reg.getId();
+    }
+
+    public void cancel() {
+        RegisterDao reg = new RegisterDao(new ConnectionFactory().getConnection());
+        reg.clearReg();
+
+
     }
 }

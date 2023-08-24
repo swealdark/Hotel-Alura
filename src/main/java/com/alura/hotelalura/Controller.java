@@ -20,10 +20,7 @@ public class Controller {
     @FXML Hyperlink forgotpsw;
     @FXML Hyperlink signup;
     @FXML Button login;
-    private Scene mainScene;
-    public void setMainScene(Scene scene){
-        this.mainScene = scene;
-    }
+
     @FXML
     protected void onloginClick(MouseEvent event) throws SQLException {
 
@@ -38,10 +35,8 @@ public class Controller {
                 scenne.setScene(new Scene(dashboard));
                 scenne.show();
             } catch (IOException e) {
-                e.printStackTrace();
                 throw new RuntimeException(e);
             }
-            System.out.println("Nyaaaaaaaaaaaa");
         }else{
             Alert loginError = new Alert(Alert.AlertType.INFORMATION);
             loginError.setTitle("Login Error");
