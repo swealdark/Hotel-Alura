@@ -30,7 +30,7 @@ public class Controller {
 
         if(connectController.loginAuthentication(userNameJoin,passwordJoin)){
             try {
-                Parent dashboard = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+                Parent dashboard = FXMLLoader.load(getClass().getResource("controllers/dashboard.fxml"));
                 Stage scenne =(Stage) ((Node) event.getSource()).getScene().getWindow();
                 scenne.setScene(new Scene(dashboard));
                 scenne.show();

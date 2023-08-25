@@ -4,12 +4,14 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -19,9 +21,9 @@
          <top>
             <BorderPane prefHeight="495.0" prefWidth="755.0" BorderPane.alignment="CENTER">
                <left>
-                  <AnchorPane prefHeight="495.0" prefWidth="202.0" styleClass="navContent" stylesheets="@styleSheets/dashboard.css" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="495.0" prefWidth="202.0" styleClass="navContent" stylesheets="@../styleSheets/dashboard.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="18.0" layoutY="14.0" prefHeight="40.0" prefWidth="138.0" styleClass="contentStyle2" stylesheets="@styleSheets/dashboard.css">
+                        <AnchorPane layoutX="18.0" layoutY="14.0" prefHeight="40.0" prefWidth="138.0" styleClass="contentStyle2" stylesheets="@../styleSheets/dashboard.css">
                            <children>
                               <Label layoutX="35.0" layoutY="11.0" prefHeight="21.0" prefWidth="105.0" text="Hotel Alura" textFill="#197ffc">
                                  <font>
@@ -30,18 +32,18 @@
                               </Label>
                               <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@imageSrc/alura100px.png" />
+                                    <Image url="@../imageSrc/alura100px.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="1.0" layoutY="54.0" prefHeight="443.0" prefWidth="200.0">
                            <children>
-                              <Button layoutX="-1.0" layoutY="38.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="selected" stylesheets="@styleSheets/dashboard.css" text="Dashboard" textFill="#157bfe">
+                              <Button layoutX="-1.0" layoutY="38.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="selected" stylesheets="@../styleSheets/dashboard.css" text="Dashboard" textFill="#157bfe">
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@imageSrc/DashbrdSelect.png" />
+                                          <Image url="@../imageSrc/DashbrdSelect.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -49,11 +51,11 @@
                                     <Font name="SansSerif Regular" size="12.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="1.0" layoutY="135.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="184.0" styleClass="unselected" stylesheets="@styleSheets/dashboard.css" text="Customer Registration" textFill="#838a94">
+                              <Button layoutX="1.0" layoutY="135.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="184.0" styleClass="unselected" stylesheets="@../styleSheets/dashboard.css" text="Customer Registration" textFill="#838a94">
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" translateY="-5.0">
                                        <image>
-                                          <Image url="@imageSrc/CustmReg.png" />
+                                          <Image url="@../imageSrc/CustmReg.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -61,11 +63,11 @@
                                     <Font name="SansSerif Regular" size="12.0" />
                                  </font>
                               </Button>
-                              <Button layoutY="228.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" styleClass="unselected" stylesheets="@styleSheets/dashboard.css" text="Manage" textFill="#838a94">
+                              <Button layoutY="228.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" styleClass="unselected" stylesheets="@../styleSheets/dashboard.css" text="Manage" textFill="#838a94">
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@imageSrc/manage.png" />
+                                          <Image url="@../imageSrc/manage.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -73,11 +75,11 @@
                                     <Font name="SansSerif Regular" size="12.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="1.0" layoutY="336.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="unselected" stylesheets="@styleSheets/dashboard.css" text="Employeds" textFill="#838a94">
+                              <Button layoutX="1.0" layoutY="336.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="127.0" styleClass="unselected" stylesheets="@../styleSheets/dashboard.css" text="Employeds" textFill="#838a94">
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@imageSrc/employees.png" />
+                                          <Image url="@../imageSrc/employees.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -93,7 +95,7 @@
                <center>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <top>
-                        <AnchorPane prefHeight="96.0" prefWidth="501.0" stylesheets="@styleSheets/dashboard.css" BorderPane.alignment="CENTER">
+                        <AnchorPane prefHeight="96.0" prefWidth="501.0" stylesheets="@../styleSheets/dashboard.css" BorderPane.alignment="CENTER">
                            <children>
                               <Label layoutX="22.0" layoutY="48.0" text="Dashboard" textFill="#727b8e">
                                  <font>
@@ -109,36 +111,72 @@
                      <right>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Pane fx:id="regPhase2" layoutX="23.0" layoutY="180.0" prefHeight="194.0" prefWidth="156.0">
+                              <StackPane fx:id="regStack" layoutX="23.0" layoutY="180.0">
                                  <children>
-                                    <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="95.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" x="30.0">
-                                       <image>
-                                          <Image url="@imageSrc/date.png" />
-                                       </image>
-                                    </ImageView>
-                                    <DatePicker fx:id="dateEntry" layoutX="1.0" layoutY="1.0" onAction="#evalDate" prefHeight="27.0" prefWidth="150.0" promptText="Entry date" styleClass="date" stylesheets="@styleSheets/dashboard.css" />
-                                    <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="95.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" x="30.0">
-                                       <image>
-                                          <Image url="@imageSrc/date.png" />
-                                       </image>
-                                    </ImageView>
-                                    <DatePicker fx:id="dateExit" layoutY="33.0" onAction="#evalDate" prefHeight="28.0" prefWidth="149.0" promptText="Departure date" styleClass="date" stylesheets="@styleSheets/dashboard.css" />
-                                    <Label fx:id="amount" layoutX="41.0" layoutY="135.0" text="Monto: $100">
-                                       <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
-                                       </font>
-                                    </Label>
-                                    <ComboBox fx:id="paymentMethod" layoutY="78.0" prefHeight="26.0" prefWidth="149.0" promptText="Payment Method" style="-fx-background-color: #fff;" styleClass="date" stylesheets="@styleSheets/dashboard.css" />
-                                    <Button fx:id="nextReg" layoutX="18.0" layoutY="158.0" mnemonicParsing="false" onAction="#clickEventHandler" prefHeight="25.0" prefWidth="117.0" styleClass="addButton" stylesheets="@styleSheets/dashboard.css" text="Next" textFill="WHITE">
-                                       <font>
-                                          <Font name="SansSerif Bold" size="12.0" />
-                                       </font>
-                                    </Button>
+                                    <Pane fx:id="regPhase2" prefHeight="226.0" prefWidth="156.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="95.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" x="30.0">
+                                             <image>
+                                                <Image url="@../imageSrc/date.png" />
+                                             </image>
+                                          </ImageView>
+                                          <DatePicker fx:id="dateEntry" layoutX="1.0" layoutY="1.0" onAction="#evalDate" prefHeight="27.0" prefWidth="150.0" promptText="Entry date" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="95.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" x="30.0">
+                                             <image>
+                                                <Image url="@../imageSrc/date.png" />
+                                             </image>
+                                          </ImageView>
+                                          <DatePicker fx:id="dateExit" layoutY="33.0" onAction="#evalDate" prefHeight="28.0" prefWidth="149.0" promptText="Departure date" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
+                                          <Label fx:id="amount" layoutX="41.0" layoutY="135.0" text="Monto: $100">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="paymentMethod" layoutY="78.0" prefHeight="26.0" prefWidth="149.0" promptText="Payment Method" style="-fx-background-color: #fff;" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
+                                          <Button fx:id="nextReg" layoutX="18.0" layoutY="158.0" mnemonicParsing="false" onAction="#clickEventHandler" prefHeight="25.0" prefWidth="117.0" styleClass="addButton" stylesheets="@../styleSheets/dashboard.css" text="Next" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="210.0" prefWidth="156.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="130.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../imageSrc/date.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextField fx:id="lastName" layoutX="4.0" layoutY="58.0" promptText="LastName" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
+                                          <DatePicker fx:id="dateBirth" layoutX="4.0" layoutY="86.0" prefHeight="25.0" prefWidth="149.0" promptText="Date of Birth" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
+                                          <ComboBox fx:id="nationality" layoutX="4.0" layoutY="114.0" prefWidth="150.0" promptText="Nationality" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
+                                          <TextField fx:id="phone" layoutX="5.0" layoutY="144.0" promptText="Phone" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
+                                          <Button layoutX="14.0" layoutY="187.0" mnemonicParsing="false" onAction="#cancel" stylesheets="@../styleSheets/dashboard.css">
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../imageSrc/CancelReg.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></Button>
+                                          <TextField fx:id="firstName" layoutX="4.0" layoutY="30.0" promptText="FirstName" styleClass="date" stylesheets="@../styleSheets/dashboard.css" />
+                                          <Label alignment="CENTER" layoutY="7.0" prefHeight="17.0" prefWidth="160.0" text="Reservation ID:" />
+                                          <Button layoutX="92.0" layoutY="181.0" mnemonicParsing="false" onAction="#save" stylesheets="@../styleSheets/dashboard.css">
+                                             <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../imageSrc/save.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </Pane>
                                  </children>
-                              </Pane>
+                              </StackPane>
                               <ImageView fx:id="image2" fitHeight="136.0" fitWidth="176.0" layoutX="13.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@imageSrc/estandar.jpg" />
+                                    <Image url="@../imageSrc/estandar.jpg" />
                                  </image>
                               </ImageView>
                               <Label layoutX="62.0" layoutY="143.0" text="Standar Room">
@@ -150,44 +188,44 @@
                         </AnchorPane>
                      </right>
                      <center>
-                        <AnchorPane prefHeight="355.0" prefWidth="353.0" styleClass="date" stylesheets="@styleSheets/dashboard.css" BorderPane.alignment="CENTER">
+                        <AnchorPane prefHeight="355.0" prefWidth="353.0" styleClass="date" stylesheets="@../styleSheets/dashboard.css" BorderPane.alignment="CENTER">
                            <children>
                               <ImageView fx:id="image" fitHeight="156.0" fitWidth="220.0" layoutX="68.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@imageSrc/estandar.jpg" />
+                                    <Image url="@../imageSrc/estandar.jpg" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="previous" layoutX="37.0" layoutY="113.0" mnemonicParsing="false" stylesheets="@styleSheets/dashboard.css">
+                              <Button fx:id="previous" layoutX="37.0" layoutY="113.0" mnemonicParsing="false" stylesheets="@../styleSheets/dashboard.css">
                                  <graphic>
                                     <ImageView fitHeight="18.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@imageSrc/left.png" />
+                                          <Image url="@../imageSrc/left.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button fx:id="next" layoutX="294.0" layoutY="113.0" mnemonicParsing="false" stylesheets="@styleSheets/dashboard.css">
+                              <Button fx:id="next" layoutX="294.0" layoutY="113.0" mnemonicParsing="false" stylesheets="@../styleSheets/dashboard.css">
                                  <graphic>
                                     <ImageView fitHeight="18.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@imageSrc/right.png" />
+                                          <Image url="@../imageSrc/right.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </Button>
                               <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="18.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@imageSrc/freeRoom.png" />
+                                    <Image url="@../imageSrc/freeRoom.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="154.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@imageSrc/occupied.png" />
+                                    <Image url="@../imageSrc/occupied.png" />
                                  </image>
                               </ImageView>
                               <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="278.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@imageSrc/maintenance.png" />
+                                    <Image url="@../imageSrc/maintenance.png" />
                                  </image>
                               </ImageView>
                               <Label layoutX="13.0" layoutY="352.0" text="Free Rooms">

@@ -1,12 +1,16 @@
 package com.alura.hotelalura.controllers;
 
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -16,7 +20,9 @@ public class DashboardController {
     @FXML
     public Button nextReg,next,previous;
     @FXML
-    public DatePicker dateExit,dateEntry;
+    public DatePicker dateExit,dateEntry,dateBirth;
+    @FXML
+    public TextField firstName,lastName,phone;
     @FXML
     public Label free,ocupied,maintenance,amount;
     @FXML
@@ -25,7 +31,10 @@ public class DashboardController {
     public ComboBox paymentMethod;
     @FXML
     public Pane regPhase2;
-    private boolean validation = false;
+    @FXML
+    public StackPane regStack;
+    @FXML
+    public ComboBox nationality;
     private double amountValue;
     @FXML
     public void initialize(){
@@ -48,6 +57,7 @@ public class DashboardController {
         paymentMethod.getItems().addAll("Cash","Paypal","Credit Card");
 
 
+
     }
 
     public void evalDate(){
@@ -57,7 +67,6 @@ public class DashboardController {
             System.out.println(dateExit.getClass());
             System.out.println(dateEntry.getClass());
             long differenceDays = ChronoUnit.DAYS.between(dateStart,dateFinish);
-            System.out.println("Gaaaaaaaaaaaaa" + differenceDays);
             evalMount(differenceDays);
         }
     }
@@ -86,19 +95,23 @@ public class DashboardController {
     }
     private void updateRegDisplay(){
         try {
-            regPhase2.getChildren().clear();
-            Parent view = FXMLLoader.load(getClass().getResource("regt2.fxml"));
-            regPhase2.getChildren().add(view);
+            ObservableList<Node> children = regStack.getChildren();
+            Node nodoB = children.get(1);
+            nodoB.toBack();
+            nationality.getItems().addAll("Afgano","Argentino","Peruano");
 
-        } catch (IOException e) {
+
+        } catch (RuntimeException e) {
             throw new RuntimeException(e);
         }
 
     }
+    @FXML
     private void save(){
-
+        System.out.println("sabeeeeeeeeeeeeee");
     }
+    @FXML
     private void cancel(){
-
+        System.out.println("caneeeeeeeellllllll");
     }
 }
