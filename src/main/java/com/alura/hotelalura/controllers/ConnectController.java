@@ -1,5 +1,6 @@
 package com.alura.hotelalura.controllers;
 
+import com.alura.hotelalura.dao.GuestsDao;
 import com.alura.hotelalura.dao.RegisterDao;
 import com.alura.hotelalura.dao.LoginDao;
 import com.alura.hotelalura.factory.ConnectionFactory;
@@ -11,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class ConnectController {
 
@@ -38,5 +40,10 @@ public class ConnectController {
         reg.clearReg();
 
 
+    }
+
+    public void save(String fName, String lName, String birthDay, String nationality, String phoneNumber, String idReg) {
+        GuestsDao guests = new GuestsDao(new ConnectionFactory().getConnection());
+        guests.updateGuests(fName,lName,birthDay,nationality,phoneNumber,idReg);
     }
 }

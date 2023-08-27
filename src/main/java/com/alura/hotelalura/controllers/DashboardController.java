@@ -13,6 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
+import java.text.BreakIterator;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -24,7 +25,7 @@ public class DashboardController {
     @FXML
     public TextField firstName,lastName,phone;
     @FXML
-    public Label free,ocupied,maintenance,amount;
+    public Label free,ocupied,maintenance,amount,resLabel;
     @FXML
     public ImageView image,image2;
     @FXML
@@ -36,6 +37,8 @@ public class DashboardController {
     @FXML
     public ComboBox nationality;
     private double amountValue;
+
+
     @FXML
     public void initialize(){
         // In the future optimize this code
@@ -99,6 +102,9 @@ public class DashboardController {
             Node nodoB = children.get(1);
             nodoB.toBack();
             nationality.getItems().addAll("Afgano","Argentino","Peruano");
+            ConnectController controller = new ConnectController();
+            String a = controller.getId();
+            resLabel.setText("Reservation ID: "+a);
 
 
         } catch (RuntimeException e) {
@@ -108,10 +114,28 @@ public class DashboardController {
     }
     @FXML
     private void save(){
-        System.out.println("sabeeeeeeeeeeeeee");
+        String fName = firstName.getText();
+        String lName = lastName.getText();
+        String birthDay = dateBirth.getValue().toString();
+        String nationalitySlct = (String) nationality.getValue();
+        String phoneSv = phone.getText();
+
+        ConnectController controller = new ConnectController();
+        String idReg = controller.getId();
+        controller.save(fName,lName,birthDay,nationalitySlct,phoneSv,idReg);
+        ObservableList<Node> children = regStack.getChildren();
+        Node nodoB = children.get(1);
+        nodoB.toBack();
+
+
     }
     @FXML
     private void cancel(){
-        System.out.println("caneeeeeeeellllllll");
+        ConnectController controller = new ConnectController();
+        controller.cancel();
+        ObservableList<Node> children = regStack.getChildren();
+        Node nodoB = children.get(1);
+        nodoB.toBack();
+
     }
 }
