@@ -128,6 +128,18 @@ public class DashboardController {
         nodoB.toBack();
 
 
+        firstName.clear();
+        lastName.clear();
+        dateBirth.setValue(null);
+//        nationality.setValue(null);
+//        nationality.setPromptText("Nationality");
+        phone.clear();
+        dateEntry.setValue(null);
+        dateExit.setValue(null);
+//        paymentMethod.getSelectionModel().select(-1);
+//        paymentMethod.setPromptText("Payment Method");
+        /*Corregir bug de no actualizar los combo box!!!!!!!!!!!!!!!!*/
+
     }
     @FXML
     private void cancel(){
