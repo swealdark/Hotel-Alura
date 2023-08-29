@@ -19,7 +19,7 @@ import java.time.temporal.ChronoUnit;
 
 public class DashboardController {
     @FXML
-    public Button nextReg,next,previous;
+    public Button nextReg,next,previous,customReg;
     @FXML
     public DatePicker dateExit,dateEntry,dateBirth;
     @FXML
@@ -32,6 +32,8 @@ public class DashboardController {
     public ComboBox paymentMethod;
     @FXML
     public Pane regPhase2;
+    @FXML
+    public BorderPane displayContent;
     @FXML
     public StackPane regStack;
     @FXML
@@ -136,6 +138,21 @@ public class DashboardController {
         ObservableList<Node> children = regStack.getChildren();
         Node nodoB = children.get(1);
         nodoB.toBack();
+
+    }
+    @FXML
+    private void customRegHandleClick(){
+        customReg.setStyle("-fx-text-fill: #157BFE");
+        displayContent.setCenter(null);
+        displayContent.setRight(null);
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("customerRegistration.fxml"));
+            Node newContent = fxmlLoader.load();
+            displayContent.setCenter(newContent);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }

@@ -52,3 +52,9 @@
 .addButton:pressed {
     -fx-background-color:  #1566FE;
 }
+
+
+/*CustomerReg*/
+.table-view .column-header{
+    -fx-background-color: #F6F7F9;
+}
