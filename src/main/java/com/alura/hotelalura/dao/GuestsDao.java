@@ -25,4 +25,11 @@ public class GuestsDao {
             throw new RuntimeException(e);
         }
     }
+    public void getGuests(){
+        try(conn){
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM GUESTS");
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 }
