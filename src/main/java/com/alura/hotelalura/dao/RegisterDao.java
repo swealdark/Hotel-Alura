@@ -1,16 +1,12 @@
 package com.alura.hotelalura.dao;
 
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.alura.hotelalura.model.Register;
 
 public class RegisterDao {
     final private Connection conn;
@@ -56,5 +52,28 @@ public class RegisterDao {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+    public List<Register> getReg(){
+        List<Register> register = new ArrayList<>();
+        try(conn){
+            PreparedStatement statement = conn.prepareStatement("SELECT ID,CHECKIN,CHECKOUT,MOUNT,PAYMENTMETHOD FROM REGISTER");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                String idReg = resultSet.getString("ID");
+                String checkin = resultSet.getString("CHECKIN");
+                String checkout = resultSet.getString("CHECKOUT");
+                double mount = resultSet.getDouble("MOUNT");
+                String paymentMethod = resultSet.getString("PAYMENTMETHOD");
+                Register registerf = new Register(idReg,checkin,checkout,mount,paymentMethod);
+                register.add(registerf);
+            }
+            statement.execute();
+
+
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+        return register;
+        
     }
 }

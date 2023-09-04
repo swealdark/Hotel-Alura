@@ -12,10 +12,10 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alura.hotelalura.controllers.CustomRegController">
    <children>
-      <TableView layoutX="2.0" layoutY="49.0" prefHeight="200.0" prefWidth="552.0" stylesheets="@../styleSheets/dashboard.css">
+      <TableView fx:id="regTable" layoutX="2.0" layoutY="49.0" prefHeight="200.0" prefWidth="552.0" stylesheets="@../styleSheets/dashboard.css">
         <columns>
           <TableColumn prefWidth="85.0" text="Id Reg" />
-          <TableColumn prefWidth="135.0" text="CheckIn" />
+          <TableColumn fx:id="checkin" prefWidth="135.0" text="CheckIn" />
             <TableColumn prefWidth="122.0" text="CheckOut" />
             <TableColumn prefWidth="96.0" text="Amount" />
             <TableColumn prefWidth="113.0" text="Payment Method" />
