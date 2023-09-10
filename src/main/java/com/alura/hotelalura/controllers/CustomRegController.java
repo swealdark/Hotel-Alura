@@ -14,18 +14,18 @@ import java.util.List;
 
 public class CustomRegController {
     @FXML
-    public TableView regTable;
+    public TableView<Register> regTable;
     @FXML
     public TableColumn<Register,String> checkin;
     @FXML
     public void initialize(){
         RegisterDao registerDao = new RegisterDao(new ConnectionFactory().getConnection());
-        List<Register> registers = registerDao.getReg();
-//        checkin.setCellValueFactory(new PropertyValueFactory<>("checkin"));
-//        System.out.println(registers.get(0).getCheckin());
-//        ObservableList<Register> data = FXCollections.observableArrayList(registers);
-//        regTable.setItems(data);
-//        regTable.refresh();
+        ObservableList<Register> data = FXCollections.observableArrayList(
+                new Register("1","15/12/20","16/12/20",150,"Paypal"),
+                new Register("3","15/11/20","16/11/20",150,"Paypal"));
+        checkin.setCellValueFactory(new PropertyValueFactory<Register,String>("checkin"));
+        regTable.setItems(data);
+
         
     }
 }
