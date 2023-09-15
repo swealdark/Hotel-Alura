@@ -59,12 +59,12 @@ public class RegisterDao {
             PreparedStatement statement = conn.prepareStatement("SELECT ID,CHECKIN,CHECKOUT,MOUNT,PAYMENTMETHOD FROM REGISTER");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
-                String idReg = resultSet.getString("ID");
+                String id = resultSet.getString("ID");
                 String checkin = resultSet.getString("CHECKIN");
                 String checkout = resultSet.getString("CHECKOUT");
                 double mount = resultSet.getDouble("MOUNT");
                 String paymentMethod = resultSet.getString("PAYMENTMETHOD");
-                Register registerf = new Register(idReg,checkin,checkout,mount,paymentMethod);
+                Register registerf = new Register(id,checkin,checkout,mount,paymentMethod);
                 register.add(registerf);
             }
             statement.execute();

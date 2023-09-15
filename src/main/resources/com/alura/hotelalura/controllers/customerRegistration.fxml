@@ -12,13 +12,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alura.hotelalura.controllers.CustomRegController">
    <children>
-      <TableView fx:id="regTable" layoutX="2.0" layoutY="49.0" prefHeight="200.0" prefWidth="552.0" stylesheets="@../styleSheets/dashboard.css">
+      <TableView fx:id="regTable" editable="true" layoutX="2.0" layoutY="49.0" prefHeight="200.0" prefWidth="552.0" stylesheets="@../styleSheets/dashboard.css">
         <columns>
-          <TableColumn prefWidth="85.0" text="Id Reg" />
+          <TableColumn fx:id="id" prefWidth="85.0" text="Id Reg" />
           <TableColumn fx:id="checkin" prefWidth="135.0" text="CheckIn" />
-            <TableColumn prefWidth="122.0" text="CheckOut" />
-            <TableColumn prefWidth="96.0" text="Amount" />
-            <TableColumn prefWidth="113.0" text="Payment Method" />
+            <TableColumn fx:id="checkout" prefWidth="122.0" text="CheckOut" />
+            <TableColumn fx:id="mount" prefWidth="96.0" text="Amount" />
+            <TableColumn fx:id="paymentMethod" prefWidth="113.0" text="Payment Method" />
         </columns>
       </TableView>
       <MenuBar layoutX="425.0" layoutY="24.0">
@@ -28,7 +28,7 @@
         </menus>
       </MenuBar>
       <TextField layoutX="277.0" layoutY="24.0" />
-      <Button layoutX="375.0" layoutY="329.0" mnemonicParsing="false" stylesheets="@../styleSheets/dashboard.css">
+      <Button layoutX="375.0" layoutY="329.0" mnemonicParsing="false" onAction="#editable" stylesheets="@../styleSheets/dashboard.css">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -36,7 +36,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="431.0" layoutY="329.0" mnemonicParsing="false" stylesheets="@../styleSheets/dashboard.css">
+      <Button layoutX="431.0" layoutY="329.0" mnemonicParsing="false" onAction="#cancelEditable" stylesheets="@../styleSheets/dashboard.css">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -45,7 +45,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="487.0" layoutY="329.0" mnemonicParsing="false" stylesheets="@../styleSheets/dashboard.css">
+      <Button layoutX="487.0" layoutY="329.0" mnemonicParsing="false" onAction="#delReg" stylesheets="@../styleSheets/dashboard.css">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
